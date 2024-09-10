@@ -1,0 +1,68 @@
+//main:../../../../../style.scss
+// #site-navigation {
+//     display: none;
+// }
+#mega-menu-wrap-ministries .mega-menu-toggle.mega-menu-open .mega-toggle-block-1 .mega-toggle-animated-slider .mega-toggle-animated-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(90deg) !important;
+}
+@media screen and (max-width: 1024px){
+  #site-navigation {
+      display: flex;
+      position: absolute;
+      bottom: -80vh;
+      left: calc(50% - 150px);
+      background: var(--clr-primary);
+      border-radius: 21px;
+      justify-content: space-around;
+      box-shadow: 0 5px 20px #00000029;
+      width: 300px;
+      min-height: 60px;
+      align-items: center;
+      .homeStickyButtons {
+        position: absolute;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: -50%;
+        ul.mega-menu {
+        }
+      }
+      .mobile-header-search-container {
+        position: relative;
+        width: 52px;
+		    margin-top: -15px;
+        &::before {
+          content: "Search";
+          color: #fff;
+          font-size: 18px;
+          transition: color 0.4s ease;
+          bottom: -20px;
+          position: absolute;
+        }
+        .mobile-header-search {
+          color: #fff;
+          text-align: center;
+          width: 100%;
+        }
+      }
+      &.iphoneMenu {
+        bottom: -75vh;
+      }
+  }
+}
+
+@media screen and (min-width: $laptop){
+  // #site-navigation-mobile {
+  //   display: none;
+  // }
+  #site-navigation {
+      display: flex;
+      align-items: center;
+      .mobile-header-search {
+        display: none;
+      }
+      @media screen and (min-width: $desktop) {
+          display: block;
+      }
+  }
+}

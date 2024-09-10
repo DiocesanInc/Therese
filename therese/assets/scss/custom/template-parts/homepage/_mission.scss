@@ -1,0 +1,204 @@
+//main:../../../../../style.scss
+.mission-container {
+    margin-top: var(--homepage-section-spacing);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    &:not(.has-shape) {
+      .mission-image img {
+        position: relative;
+      }
+    }
+}
+
+.mission-content-wrapper {
+    --pos-left: 5%;
+    --pos-translate: 0;
+
+    padding: 15px 30px 20px;
+    // text-align: center;
+    position: relative;
+    display: inline-block;
+    max-width: 95%;
+    margin-inline: auto;
+    z-index: 10;
+    // margin-left: 2.5%;
+    &.left {
+        --pos-left: 0%;
+        --pos-translate: 0;
+    }
+    &.right {
+        --pos-left: 95%;
+        --pos-translate: -100%;
+    }
+    &.center {
+        --pos-left: 50%;
+        --pos-translate: -50%;
+    }
+    .mission-header {
+        // color: white;
+        position: relative;
+        font-size: clamp(25px, 2.5vw, 40px);
+        margin-bottom: 20px;
+    }
+    .mission-content {
+        // color: white;
+        font-size: clamp(16px, 2vw, 20px);
+        position: relative;
+        p {
+            font-size: 16px;
+            color: inherit;
+            line-height: 1.2;
+            margin: 0;
+        }
+    }
+    .the-button {
+      margin: 15px 0 10px;
+    }
+    .container {
+      position: relative;
+      width: 20vw;
+    }
+}
+.mission-image {
+  overflow: hidden;
+  max-height: 400px;
+  margin-left: 2.5%;
+  position: relative;
+  img {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    &.squares {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  svg {
+    // width: 375px;
+    // height: 375px;
+    rect, circle, line {
+      filter: brightness(var(--shape-brightness-primary));
+      stroke: var(--clr-primary);
+      stroke-width: .25px;
+    }
+  }
+  svg:first-of-type {
+    display: none;
+  }
+  svg:nth-of-type(2) {
+    display: block;
+  }
+}
+
+@media screen and (min-width: $phone) {
+
+  .mission-image {
+    overflow: unset;
+    max-height: none;
+    img {
+      // width: 535px;
+      // height: 535px;
+      // &.squares {
+        width: 300px;
+        height: 300px;
+      // }
+    }
+    svg {
+      width: unset;
+      height: unset;
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+
+  .mission-container {
+    .container {
+      text-align: right;
+      margin-left: auto;
+    }
+  }
+  .mission-image {
+    img {
+      width: 735px;
+      height: 735px;
+      &.squares {
+        width: 500px;
+        height: 500px;
+      }
+    }
+    svg:first-of-type {
+      display: block;
+    }
+    svg:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $laptop) {
+    .mission-container {
+        height: auto;
+        min-height: 50vh;
+        margin-bottom: 0;
+        // height: 50vh;
+        flex-direction: row;
+    }
+    .mission-content-wrapper {
+        // width: 40%;
+        transform: translateX(var(--pos-translate));
+        left: var(--pos-left);
+        padding: 75px 35px;
+        margin-bottom: 0;
+        top: auto;
+        max-width: none;
+        margin-inline: 0;
+        z-index: -1;
+        &::before {
+            opacity: 0.8;
+        }
+
+        .scrolling-text {
+          display: inline-block;
+          transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+          will-change: transform;
+          backface-visibility: hidden;
+        }
+
+        .mission-header, .mission-content, .the-button {
+          margin-left: 4vw;
+        }
+    }
+    .mission-image {
+      margin-right: 6vw;
+      img {
+        bottom: 0;
+        width: 700px;
+        height: 700px;
+        min-width: 650px;
+        &.squares {
+          width: 600px;
+          height: 600px;
+          bottom: 5%;
+        }
+        &.lines {
+          bottom: 10px;
+        }
+      }
+      svg.lines {
+        margin-right: -6vw;
+      }
+    }
+}

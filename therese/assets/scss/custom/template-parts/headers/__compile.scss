@@ -1,0 +1,49 @@
+//main:../../../../../style.scss
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 20;
+    transition: background 0.3s ease, padding 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (min-width: $laptop){
+      padding-top: 1rem;
+    }
+    @media screen and (min-width: $laptop){
+      display: block;
+    }
+    .header-logo-sticky {
+        display: none;
+    }
+
+    &.sticky {
+        box-shadow: 0 3px 6px #00000029;
+        padding-top: 1rem;
+        .header-logo-default {
+            display: none;
+        }
+        .header-logo-sticky {
+            display: block;
+        }
+    }
+
+    @import "bar";
+    @import "navigation";
+}
+main {
+    @import "page-header";
+}
+@import "search-form";
+
+.admin-bar .site-header {
+    padding-top: 4.5rem;
+    @media screen and (min-width: $tablet){
+      padding-top: 3rem;
+    }
+    @media screen and (min-width: $laptop){
+      padding-top: 2rem;
+    }
+}

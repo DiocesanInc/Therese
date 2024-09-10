@@ -1,0 +1,258 @@
+//main:../../../../../style.scss
+.news-container {
+  margin-top: var(--homepage-section-spacing);
+  background: #f2f2f2;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  &.lines {
+    --homepage-section-spacing: 0;
+  }
+  @media screen and (min-width: $laptop){
+    overflow: visible;
+  }
+  .container {
+    position: relative;
+    margin: 75px 0 75px 35px;
+    overflow: hidden;
+    @media screen and (min-width: $laptop){
+      margin: 75px 0 75px 50%;
+      overflow: visible;
+      .scrolling-text {
+        // margin-left: 200px;
+      }
+    }
+    .scrolling-text {
+      display: inline-block;
+      transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+      will-change: transform;
+      backface-visibility: hidden;
+      .news-faded-header {
+        color: var(--clr-quaternary);
+      }
+    }
+  }
+  .news-container-wrapper-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    @media screen and (min-width: $laptop) {
+      flex-direction: row;
+    }
+  }
+  .news-container-wrapper {
+      --slide-height: 250px !important;
+      position: relative;
+      margin: 30px auto;
+      z-index: 1;
+      width: 100%;
+      .slick-track {
+        // height: 550px;
+      }
+      .slick-arrow {
+        // bottom: 0;
+        top: 0;
+        transform: translateY(-125%);
+        &.slick-prev {
+          left: calc(50% - 50px);
+        }
+        &.slick-next {
+          left: calc(50% - -6px);
+          right: unset;
+        }
+      }
+      @media screen and (min-width: $laptop) {
+          --slide-height: auto !important;
+            width: 40%;
+            margin-top: -100px;
+          .post-wrapper {
+              margin-inline: 0;
+
+              .post-content-wrapper {
+                  margin: 5% auto;
+                  bottom: auto;
+                  top: 22%;
+              }
+          }
+      }
+      .post-wrapper {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-inline: 15px;
+          transition: margin 0.4s ease;
+          margin-bottom: 30px !important;
+          width: 320px;
+          .post-content-wrapper {
+            min-height: 500px;
+          }
+          @media screen and (min-width: $phone) {
+            width: 500px;
+            .post-content-wrapper {
+              min-height: 600px;
+            }
+          }
+          @media screen and (min-width: $laptop) {
+            width: auto;
+            .post-content-wrapper {
+              min-height: auto;
+            }
+          }
+          @media screen and (min-width: $desktop) {
+            .post-content-wrapper {
+              min-height: auto;
+            }
+          }
+
+          .post-content-wrapper {
+              padding: 25px;
+              box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+              position: relative;
+              @media screen and (min-width: $laptop) {
+                // transform: rotate(-90deg);
+                  bottom: -100%;
+              }
+              img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                @media screen and (min-width: $tablet) {
+                  height: 260px;
+                }
+                @media screen and (min-width: $laptop) {
+                  height: 360px;
+                }
+                @media screen and (min-width: $desktop) {
+                  height: 400px;
+                }
+              }
+              &::before {
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  background: white;
+                  opacity: 0.9;
+              }
+              > * {
+                  position: relative;
+              }
+          }
+
+          .post-heading {
+              font-size: clamp(25px, 2vw, 40px);
+              margin-block: 20px 15px;
+              position: relative;
+          }
+
+          .post-excerpt {
+              font-size: clamp(16px, 1.5vw, 23px);
+              margin-bottom: 45px;
+          }
+
+          .post-read-more {
+              // font-weight: bold;
+              // text-decoration: underline;
+              font-size: clamp(16px, 1.5vw, 23px);
+              transition: color 0.3s ease;
+              display: inline-block;
+          }
+      }
+  }
+  svg {
+    position: absolute;
+    left: -60%;
+    top: 0;
+    rect, circle, line {
+      filter: brightness(var(--shape-brightness-secondary));
+      fill: var(--clr-secondary);
+      stroke: var(--clr-secondary);
+      stroke-width: 0.5px;
+    }
+    &.lines {
+      opacity: 25%;
+      left: -85%;
+      top: 10%;
+    }
+    @media screen and (min-width: $l-desktop) {
+      &.lines {
+        left: -25%;
+      }
+    }
+  }
+  svg:first-of-type {
+    display: none;
+  }
+  svg:nth-of-type(2) {
+    display: block;
+    top: 50px;
+  }
+  @media screen and (min-width: $tablet) {
+    svg:first-of-type {
+      display: block;
+    }
+    svg:nth-of-type(2) {
+      display: none;
+    }
+  }
+  .news-content-wrapper-wrapper {
+    margin-bottom: 70px;
+    position: relative;
+    @media screen and (min-width: $laptop){
+     width: 50%;
+     margin-bottom: 0;
+    }
+    .news-header {
+      margin: 0;
+    }
+    .news-content-wrapper {
+        padding: 10px 35px;
+        margin-bottom: 0;
+        top: var(--header-height);
+        margin-inline: 0;
+        position: sticky;
+        svg.lines {
+          display: none !important;
+        }
+        @media screen and (min-width: $laptop) {
+            width: 41vw;
+            margin-bottom: 60px;
+            svg {
+              left: 0%;
+              width: 520px;
+              height: 520px;
+            }
+        }
+        @media screen and (min-width: $l-desktop) {
+            svg {
+              left: -7%;
+              width: 750px;
+              height: 750px;
+            }
+        }
+        &.newsSticky {
+          margin-top: var(--header-height);
+        }
+        &::before {
+            opacity: 0.8;
+        }
+        p {
+          margin: 20px auto 30px;
+        }
+        svg {
+          position: absolute;
+          right: 0;
+          top: unset;
+          z-index: 0 !important;
+          rect, circle, line {
+            filter: brightness(100%);
+            stroke: #fff;
+            fill: transparent;
+          }
+        }
+        * {
+          // position: relative;
+          z-index: 1;
+        }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+//main:../../../../style.scss
+.site-main {
+    margin-bottom: 3.5rem;
+    @media screen and (min-width: $laptop){
+      margin-bottom: 0;
+    }
+}
+.entry-content {
+    margin-top: 2rem;
+}

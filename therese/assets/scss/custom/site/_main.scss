@@ -1,0 +1,9 @@
+// main: ../../../../style.scss
+body,
+html {
+    // overflow-x: hidden;
+}
+
+body:not(.page-template-page-landing) .content-area {
+    // padding: var(--content-inset);
+}

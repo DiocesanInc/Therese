@@ -1,0 +1,108 @@
+// main: ../../../../style.scss
+.grid-container {
+  width: unset;
+  .grid-selector {
+    display: flex;
+    flex-wrap: wrap;
+    background: #F9F9F9;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+    // width: calc(50% - 2rem);
+    padding: 2rem 1rem;
+    margin-bottom: 2.5rem;
+    [class*="-half-L"] {
+      flex: 1;
+      text-align: center;
+      // margin-right: 1rem;
+      [class*="-image"] {
+        // border-radius: 50%;
+        object-fit: cover;
+        width: 13.5rem;
+        height: 15rem;
+      }
+    }
+
+    [class*="-half-R"] {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex: 2;
+      margin-left: 1rem;
+      [class*="-name"] {
+        margin-bottom: 0.5rem;
+        [class*="-name-link"] {
+          font-weight: 400;
+          transition: color 0.25s ease-in;
+        }
+      }
+
+      .contact-persons {
+        .contact-person {
+          // margin-bottom: 2rem;
+          .contact-name, .contact-email, .contact-phone {
+            margin-bottom: 0.25rem;
+          }
+          .contact-name {
+            font-weight: 700;
+          }
+
+          .contact-email, .contact-phone {
+            a {
+              transition: color 0.25s ease-in;
+              margin-left: 10px;
+            }
+          }
+
+          &>* {
+            margin: 0 0 0.25em;
+          }
+        }
+      }
+    }
+  }
+  &.ministry-container {
+    .grid-selector {
+      width: calc(50% - 2rem);
+      .contact-person-phone {
+        float: left;
+        margin-right: 10px !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1399px) {
+  .grid-container {
+    .grid-selector {
+      width: auto;
+      &.has-plinko {
+        &:nth-child(odd) {
+          margin-right: 5%;
+        }
+
+        &:nth-child(even) {
+          margin-left: 5%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .grid-container {
+    .grid-selector {
+      flex-direction: column;
+      [class*="-half-L"] {
+        margin-right: 0;
+      }
+
+      [class*="-half-R"] {
+        margin-left: 0;
+      }
+    }
+    &.ministry-container {
+      .grid-selector {
+        width: auto;
+      }
+    }
+  }
+}

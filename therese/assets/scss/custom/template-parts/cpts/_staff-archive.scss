@@ -1,0 +1,31 @@
+//main:../../../../../style.scss
+.staff-category {
+    margin-bottom: 7rem;
+}
+.staff-category-members {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 80px;
+}
+
+@media screen and (min-width: $laptop) {
+    .staff-category-members {
+        grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+        gap: 20px;
+    }
+}
+
+// @media screen and (min-width: $laptop) {
+//     .staff-category-members {
+//         grid-template-columns: calc(calc(100% / 3) - 20px) calc(calc(100% / 3) - 20px) calc(calc(100% / 3) - 20px);
+//         gap: 30px;
+//     }
+// }
+//
+// @media screen and (min-width: $desktop) {
+//     .staff-category-members {
+//         grid-template-columns: calc(25% - calc(90px / 4)) calc(25% - calc(90px / 4)) calc(25% - calc(90px / 4)) calc(
+//                 25% - calc(90px / 4)
+//             );
+//     }
+// }

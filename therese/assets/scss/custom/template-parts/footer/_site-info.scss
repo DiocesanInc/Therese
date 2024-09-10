@@ -1,0 +1,14 @@
+footer .site-info {
+    --site-info-margin-top: 2rem;
+    margin-top: var(--site-info-margin-top);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .copyright {
+        text-align: center;
+    }
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

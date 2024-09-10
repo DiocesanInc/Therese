@@ -1,0 +1,67 @@
+//main:../../../../style.scss
+.the-button, .dpi_pw-container #dpi_pw-request-form .the-button, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column {
+    color: var(--button-font-color, white);
+    padding: 0.6rem 1.2rem 0.6rem 1.2rem;
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    transition: var(--tr-background), var(--tr-transform), var(--tr-color);
+    font-size: var(--fs-500);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: transparent;
+    border: 0px;
+    line-height: 1.5;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        background: transparent;
+        color: var(--button-font-color-hover, var(--clr-quaternary));
+        border: 0px;
+        transform: unset;
+        font-weight: bold;
+    }
+    &::after {
+      content: "";
+      background: var(--button-background-color);
+      border-radius: 25px;
+      position: absolute;
+      width: 33%;
+      max-width: 33%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      opacity: .6;
+      transition: width .35s ease-in;
+      z-index: -1;
+    }
+    &:hover::after, &.clicked::after, &:focus::after {
+      width: 100%;
+      opacity: .9;
+      max-width: 100%;
+    }
+}
+
+.dpi_pw-container #dpi_pw-request-form .the-button {
+    padding: 0;
+}
+
+@keyframes button-click {
+    0% {
+        transform: scale3d(0.3, 0.3, 1);
+    }
+    25%,
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale3d(1.2, 1.2, 1);
+    }
+}

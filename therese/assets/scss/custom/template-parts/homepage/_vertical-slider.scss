@@ -1,0 +1,137 @@
+//main:../../../../../style.scss
+
+/* Slider */
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    touch-callout: none;
+    user-select: none;
+    touch-action: pan-y;
+    tap-highlight-color: transparent;
+    // padding-top: 40px;
+
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block !important;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    [dir="rtl"] & {
+        float: right;
+    }
+    img {
+        display: block;
+    }
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 0;
+        outline: none;
+
+        &:focus,
+        &:active,
+        &::selection{
+            outline: none !important;
+            border: 0 !important;
+            box-shadow: none;
+        }
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-current{
+    position: relative;
+}
+
+
+.news-content-wrapper .slick-slide{
+    overflow: hidden;
+        padding: 20px 0;
+
+}
+
+.news-content-wrapper [aria-hidden]{
+    transition: 1s;
+}
+.news-content-wrapper .slick-current > span{
+    box-sizing: border-box;
+    display: block;
+    // @extend .animate--shrink;
+}
+
+.news-content-wrapper .slick-current + .slick-slide > span{
+    // @extend .animate--grow;
+}
+
+.no-js .news-content-wrapper .slick-dupe:nth-child(2) > span{
+    padding: 1em;
+    // @extend .animate--grow;
+}
+
+// .news-container-wrapper {
+//   margin: 0 auto;
+//   width: 500px;
+//   padding: 0 40px;
+// }

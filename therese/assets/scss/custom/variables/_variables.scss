@@ -1,0 +1,27 @@
+//main:../../../../style.scss
+:root {
+    --animation-speed: 0.3s;
+    --header-height: calc(var(--max-logo-height) + 30px);
+    --hero-height: 60vh;
+    --grey: #efefef;
+    --overlay-color: #3c3c3c;
+    --scale: scale(1.1);
+    --tr-background: background var(--animation-speed) ease;
+    --tr-transform: transform var(--animation-speed) ease;
+    --tr-color: color var(--animation-speed) ease;
+    --tr-height: height var(--animation-speed) ease;
+    --tr-width: width var(--animation-speed) ease;
+    --tr-scale: scale var(--animation-speed) ease;
+    --tr-left: left var(--animation-speed) ease;
+    --tr-opacity: opacity var(--animation-speed) ease;
+    --content-inset: 15px; //if you want to set this to 0 keep the px in order for the calc() functions to remain working
+    --homepage-section-spacing: 40px;
+    @media screen and (min-width: $laptop) {
+        --content-inset: 20px;
+        --homepage-section-spacing: 80px;
+    }
+    @media screen and (min-width: $desktop) {
+        --content-inset: 20px;
+        --homepage-section-spacing: 90px;
+    }
+}

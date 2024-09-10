@@ -1,0 +1,291 @@
+// main: ../../../../../style.scss
+.homeStickyButtons {
+    position: fixed;
+    bottom: 60px;
+    right: 0;
+    transform: translateY(-200%);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    height: 0;
+    a {
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        padding: 17px 20px;
+        text-decoration: none;
+        width:100%;
+        transition: padding .3s ease, background .3s ease, color .3s ease, border .3s ease;
+        background-color: #fff;
+        min-width: 182px;
+        background: var(--clr-primary);
+        color: #fff;
+        height: 47px;
+    }
+}
+.homeStickyButtons a {
+}
+.homeStickyButtons a span {
+    position: absolute;
+    left: -33px;
+    top:0;
+    transform: rotate(180deg);
+    font-size: 75px;
+}
+.homeStickyButtons .stickyIcon {
+  width: 47px;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #fff;
+}
+.homeStickyButtons .stickyIcon i {
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.stickyLinkContainer:nth-child(3n+1) .stickyIcon {
+  background: var(--clr-primary);
+}
+.stickyLinkContainer:nth-child(3n+2) .stickyIcon {
+  background-color: var(--clr-secondary);
+}
+.stickyLinkContainer:nth-child(3n+3) .stickyIcon {
+  background-color: var(--clr-tertiary);
+}
+.stickyFormContainer, .stickyLinkContainer {
+    margin:5px 0;
+    display: flex;
+    position: relative;
+    right: -191px;
+    transition: right .5s ease;
+    box-shadow: 0px 0px 10px #00000029;
+}
+.stickyFormContainer:hover, .stickyLinkContainer:hover{
+    right:0;
+    .stickyIcon, a {
+        background: var(--clr-secondary);
+    }
+}
+.stickyFormContainer:hover a, .stickyFormContainer.open a{
+  // background:var(--clr-secondary);
+  color:#fff;
+  // border:1px solid var(--clr-secondary);
+}
+.stickyFormContainer.open {
+    right: 550px;
+}
+.stickyFormContainer a {
+    position: relative;
+    cursor: pointer;
+    height: 75px;
+    // border-top-left-radius: 5px;
+    // border-bottom-left-radius: 5px;
+}
+.stickyForm h2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.stickyFormContainer a.stickyPhone, .homeStickyButtons div:nth-child(2n+2) a.stickyPhone{
+  display: block;
+  // color:var(--clr-secondary);
+  font-size:32px;
+  line-height:42px;
+  background-color:transparent;
+  height:auto;
+  border:none;
+  min-height: 0;
+  padding: 0;
+  width: max-content;
+}
+.stickyForm {
+    background: #ffffff;
+    width:551px;
+    box-shadow: 20px 0px 3px 0px #000000;
+    // border-left: 20px solid var(--clr-secondary);
+    position: absolute;
+    left: 100%;
+    bottom:0;
+    padding: 5px 15px;
+    z-index: 1;
+}
+.homeStickyButtons .stickyFormContainer:nth-child(2n+2) .stickyForm{
+  // border-left: 20px solid var(--clr-secondary);
+}
+.homeStickyButtons .stickyFormContainer:nth-child(3n+3) .stickyForm{
+  // border-left: 20px solid var(--clr-tertiary);
+}
+.stickyFormContainer.open .stickyForm{
+  z-index: 2;
+}
+.stickyForm .gform_wrapper{
+  margin:0;
+}
+.stickyForm form {
+    // padding: 20px;
+}
+.stickyForm a{
+  display: none;
+}
+.stickyForm .gform_wrapper .gform_heading{
+  margin-bottom:5px;
+}
+.stickyForm .gform_wrapper h3.gform_title{
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom:15px;
+  // border-bottom:1px solid var(--clr-secondary)
+}
+.stickyForm .gform_wrapper h3.gform_title, .stickyForm .gform_wrapper span.gform_description{
+  margin:0;
+}
+.stickyForm .gform_wrapper ul li.gfield, .stickyForm .gform_wrapper ul li.gfield.field_sublabel_above.field_description_below+li.gfield{
+  margin-top:0px;
+}
+.stickyForm .gform_wrapper .top_label div.ginput_container{
+  margin-top:0px;
+}
+.stickyForm .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label, .stickyForm .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label{
+  margin-bottom:1px;
+}
+.stickyForm .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+.stickyForm .gform_wrapper .field_sublabel_above .ginput_complex.ginput_container label,
+.stickyForm .gform_wrapper .field_sublabel_above div[class*=gfield_date_].ginput_container label,
+.stickyForm .gform_wrapper .field_sublabel_above div[class*=gfield_time_].ginput_container label,
+.stickyForm .gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label,
+.stickyForm .gform_wrapper .field_sublabel_below div[class*=gfield_date_].ginput_container label,
+.stickyForm .gform_wrapper .field_sublabel_below div[class*=gfield_time_].ginput_container label{
+  line-height:.813em;
+  margin:2px 0 0;
+}
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+    border: 1px solid #666;
+}
+.stickyForm .gform_wrapper .gform_footer input.button, .stickyForm .gform_wrapper .gform_footer input[type=submit],
+.stickyForm .gform_wrapper .gform_page_footer input.button, .stickyForm .gform_wrapper .gform_page_footer input[type=submit]{
+  font-size: 18px;
+  line-height:18px;
+  font-weight: 700;
+  // color:var(--clr-primary);
+  background: #fff;
+  border: 1px solid #ADADAD;
+  padding:10px 45px;
+  transition: color .3s ease, background .3s ease, border .3s ease;
+}
+.stickyForm .gform_wrapper .gform_footer input.button:hover, .stickyForm .gform_wrapper .gform_footer input[type=submit]:hover,
+.stickyForm .gform_wrapper .gform_page_footer input.button:hover, .stickyForm .gform_wrapper .gform_page_footer input[type=submit]:hover{
+  color: #fff;
+  // background: var(--clr-secondary);
+  // border: 1px solid var(--clr-secondary);
+}
+.stickyForm .gform_wrapper textarea.medium{
+    height:120px;
+}
+.stickyForm .gform_wrapper .gform_footer{
+    margin:5px 0 0;
+    padding:5px 0;
+}
+@media screen and (min-height:1024px){
+  .stickyLinkContainer.navWrapper {
+    display: none;
+  }
+}
+@media screen and (min-width:$laptop){
+  .homeStickyButtons{
+    bottom: 15vh;
+  }
+  .stickyFormContainer, .stickyLinkContainer{
+    flex-direction: column;
+    right:0;
+    margin: 0 17px 0 0;
+  }
+  .stickyFormContainer {
+  position: unset;
+  }
+  .stickyLinkContainer {
+    position: relative;
+  }
+  .homeStickyButtons .stickyIcon {
+    // border-right: 1px solid #fff;
+    width: 34px;
+    height: 34px;
+  }
+  .homeStickyButtons .stickyIcon:last-child {
+    border-right: 0;
+  }
+  .homeStickyButtons a{
+    margin:0;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+    height: 100%;
+  }
+  .stickyFormContainer a{
+    text-align: center;
+    justify-content: center;
+    border-radius:0;
+  }
+  .homeStickyButtons a span{
+    display: none;
+  }
+  .stickyLinkContainer:hover a {
+    background: transparent;
+  }
+  .stickyFormContainer.open{
+    right:0;
+  }
+  .stickyForm{
+    position: absolute;
+    position: relative;
+    left:0;
+    top:0;
+    width:100vw;
+    max-height:0;
+    transform:none;
+    transition: max-height .3s ease, border-width .3s ease;
+    border-left:0;
+    box-shadow: none;
+    // border-top:20px solid var(--clr-secondary);
+    border-width:0px;
+    overflow:hidden;
+  }
+  .stickyForm .grecaptcha-badge{
+    display: none;
+    visibility: none;
+  }
+  .homeStickyButtons .stickyFormContainer:nth-child(2n+2) .stickyForm{
+    border-left:0;
+    // border-top: 20px solid var(--clr-secondary);
+    border-width:0px;
+  }
+  .homeStickyButtons .stickyFormContainer:nth-child(3n+3) .stickyForm{
+    border-left:0;
+    // border-top: 20px solid var(--clr-tertiary);
+    border-width:0px;
+  }
+  .stickyFormContainer.open .stickyForm,
+  .stickyFormContainer.open:nth-child(2n+2) .stickyForm,
+  .stickyFormContainer.open:nth-child(3n+3) .stickyForm{
+    max-height:1000px;
+    border-width:0px;
+  }
+}
+@media screen and (max-width:375px){
+  .homeStickyButtons {
+    max-width: 375px;
+  }
+}

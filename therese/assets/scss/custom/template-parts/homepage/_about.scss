@@ -1,0 +1,186 @@
+//main:../../../../../style.scss
+.about-container {
+    margin-top: var(--homepage-section-spacing);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    // max-width: 95%;
+    overflow: hidden;
+    z-index: 10;
+    flex-direction: column;
+}
+
+.about-content-wrapper {
+    --pos-left: 5%;
+    --pos-translate: 0;
+
+    padding: 15px 30px 20px;
+    // text-align: center;
+    position: relative;
+    display: inline-block;
+    max-width: 95%;
+    margin-inline: auto;
+    z-index: 10;
+    &.left {
+        --pos-left: 5%;
+        --pos-translate: 0;
+    }
+    &.right {
+        --pos-left: 95%;
+        --pos-translate: -100%;
+    }
+    &.center {
+        --pos-left: 50%;
+        --pos-translate: -50%;
+    }
+    .about-faded-header {
+        margin-bottom: 0;
+    }
+    .about-header {
+      margin-bottom: 0;
+        position: relative;
+        font-size: clamp(25px, 2.5vw, 40px);
+        // margin-block: 0 50px;
+    }
+    .about-content {
+        // color: white;
+        font-size: clamp(16px, 2vw, 20px);
+        position: relative;
+        p {
+            font-size: 16px;
+            color: inherit;
+            line-height: 1.2;
+            margin: 20px auto;
+        }
+    }
+    .container {
+      position: relative;
+      width: 20vw;
+    }
+}
+.scrolling-text.scrolling-text-copy {
+    display: none !important;
+}
+.about-image {
+  position: relative;
+  grid-template-columns: [line1] 200px [line2] 200px [lineend];
+  grid-template-rows: [row1-start] 125px [row1-end] 125px [last-line];
+  display: grid;
+  margin-left: 2.5%;
+  .img1 {
+    grid-column-start: line1;
+    grid-column-end: line2;
+    grid-row-start: row1-start;
+    grid-row-end: last-line;
+    display: grid;
+    height: 100%;
+    object-fit: cover;
+  }
+  .img2 {
+    grid-column-start: line2;
+    grid-column-end: lineend;
+    grid-row-start: row1-end;
+    grid-row-end: last-line;
+    display: grid;
+    height: 100%;
+    object-fit: cover;
+    margin-left: -5%;
+    margin-top: 5%;
+    z-index: -1;
+  }
+  .img3 {
+    grid-column-start: line2;
+    grid-column-end: lineend;
+    grid-row-start: row1-start;
+    grid-row-end: row1-end;
+    display: grid;
+    height: 100%;
+    object-fit: cover;
+    margin-left: -10%;
+    margin-top: 5%;
+  }
+  svg {
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    top: 0;
+    rect, circle, line {
+      filter: brightness(var(--shape-brightness-secondary));
+      fill: var(--clr-secondary);
+      stroke: var(--clr-secondary);
+      stroke-width: .5px;
+    }
+    line {
+      stroke-width: 1.25px;
+    }
+  }
+  svg:first-of-type {
+    display: none;
+  }
+  svg:nth-of-type(2) {
+    display: block;
+    top: 50px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .about-image {
+    grid-template-columns: [line1] 310px [line2] 310px [lineend];
+    grid-template-rows: [row1-start] 250px [row1-end] 250px [last-line];
+    svg:first-of-type {
+      display: block;
+    }
+    svg:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: $laptop) {
+    .about-container {
+        height: auto;
+        min-height: 50vh;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        // height: 50vh;
+    }
+    .about-image {
+        // margin-left: 2.5%;
+    }
+    .about-content-wrapper {
+        // width: 40%;
+        transform: translateX(var(--pos-translate));
+        left: var(--pos-left);
+        padding: 45px 15px;
+        margin-bottom: 0;
+        top: auto;
+        max-width: none;
+        margin-inline: 0;
+        z-index: -1;
+        &::before {
+            opacity: 0.8;
+        }
+
+        .scrolling-text {
+          display: inline-block;
+          transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+          will-change: transform;
+          backface-visibility: hidden;
+        }
+
+        .about-header, .about-content {
+          width: 40vw;
+        }
+        .container {
+          // width: 40vw;
+        }
+    }
+}
+@media screen and (min-width: $l-desktop) {
+  .about-image {
+    position: relative;
+    grid-template-columns: [line1] 380px [line2] 380px [lineend];
+    grid-template-rows: [row1-start] 310px [row1-end] 290px [last-line];
+  }
+}

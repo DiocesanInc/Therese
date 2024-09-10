@@ -1,0 +1,201 @@
+//main:../../../../../style.scss
+.calendar-container {
+    margin-top: var(--homepage-section-spacing);
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    .simcal-calendar-head {
+      display: none;
+    }
+    .calendar-weekday-slick {
+        // display: grid;
+        // grid-template-columns: var(--grid-layout);
+        .slick-arrow {
+          top: 120px;
+          &.slick-prev {
+            left: 50%;
+            transform: translateX(-105%);
+          }
+          &.slick-next {
+            right: 50%;
+            transform: translateX(105%);
+          }
+        }
+        .slick-list {
+          background: #fff;
+          border-radius: 50px;
+          box-shadow: 0 0 20px #00000029;
+          text-align: center;
+        }
+        .simcal-day-label {
+          min-height: 50px;
+          border-bottom: 0 !important;
+          > span {
+            min-height: 50px;
+            cursor: pointer;
+            border-radius: 20px;
+            background-color: transparent !important;
+            max-width: 60px;
+            border: 1px solid transparent;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            margin: 5px auto;
+            .simcal-date-format {
+              color: var(--clr-quaternary) !important;
+              font-size: 14px;
+              background-color: transparent !important;
+              width: 35px;
+              text-align: center;
+              margin: auto 0;
+              font-weight: 400;
+            }
+            &:hover {
+              border-color: var(--clr-primary);
+              .simcal-date-format {
+                color: var(--clr-primary) !important;
+              }
+            }
+            &.simcal-today {
+              background-color: var(--clr-tertiary) !important;
+              .simcal-date-format {
+                color: var(--clr-quaternary) !important;
+              }
+            }
+            &.simcal-current, &.simcal-current:hover {
+              background-color: var(--clr-primary) !important;
+              border: 1px solid var(--clr-primary);
+              .simcal-date-format {
+                color: #fff !important;
+              }
+            }
+          }
+        }
+    }
+
+    .calendar-event-slick {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 130px;
+      dd.simcal-day {
+        margin: 0;
+        .simcal-events {
+          display: none;
+          &.simcal-visible {
+              display: block;
+              padding: 0;
+              margin: auto 0 10px;
+              .simcal-event {
+                margin: 130px auto 0;
+                + .simcal-event {
+                  margin-top: 10px;
+                }
+              }
+              @media screen and (min-width: $laptop) {
+                .simcal-event {
+                  margin: 20px auto 10px;
+                }
+              }
+          }
+          .simcal-event {
+              list-style: none;
+              background: #fff;
+              border-radius: 50px;
+              box-shadow: 0 0 20px #00000029;
+              width: 75%;
+              .simcal-event-title {
+                display: none;
+              }
+              .simcal-event-details {
+                  display: flex !important;
+                  gap: 2rem;
+                  a {
+                    text-align: left;
+                    h5 {
+                      color: var(--clr-primary);
+                      font-size: 24px;
+                      margin: .9em 0 0;
+                      .simcal-event-title {
+                        display: block;
+                      }
+                    }
+                    h6 {
+                      color: #000;
+                      margin: 0 0 .9em;
+                    }
+                  }
+              }
+          }
+        }
+      }
+    }
+
+    svg {
+      position: absolute;
+      right: 0%;
+      top: 0;
+      transform: translateY(25%);
+      z-index: -1;
+      rect, circle, line {
+        filter: brightness(var(--shape-brightness-primary));
+        stroke-width: .5px;
+        stroke: var(--clr-primary);
+      }
+    }
+    svg:first-of-type {
+      display: none;
+    }
+    svg:nth-of-type(2) {
+      display: block;
+      top: 50px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        // max-width: 90%;
+        svg:first-of-type {
+          display: block;
+        }
+        svg:nth-of-type(2) {
+          display: none;
+        }
+    }
+
+    @media screen and (min-width: $laptop) {
+      padding: 0 18%;
+      min-height: 700px;
+      .calendar-weekday-slick{
+        .slick-arrow {
+          top: 50%;
+          &.slick-prev {
+            left: -25px;
+            transform: translateY(-50%);
+          }
+          &.slick-next {
+            right: -25px;
+            transform: translateY(-50%);
+          }
+        }
+        .simcal-day-label {
+          min-height: 83px;
+          > span {
+            min-height: 83px;
+            .simcal-date-format {
+                font-size: 21px;
+                display: inline;
+            }
+          }
+        }
+        .simcal-event:first-of-type {
+          margin-top: 10px !important;
+        }
+      }
+    }
+    @media screen and (min-width: $desktop) {
+        // --grid-layout: auto auto auto;
+        padding: 0 15%;
+    }
+}

@@ -1,0 +1,69 @@
+//main:../../../../style.scss
+.category {
+  svg {
+    display: none;
+    position: absolute;
+    left: 0%;
+    top: 50%;
+  }
+  .site-main {
+    overflow: hidden;
+    position: relative;
+  }
+  .grid-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    article {
+      padding: 20px 30px;
+      box-shadow: 0 3px 9px #00000029;
+      background: #fff;
+      width: 100%;
+      margin-bottom: 20px;
+      img {
+        height: 250px;
+        object-fit: cover;
+      }
+      .post-title {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet){
+  .category .grid-container {
+    article {
+        width: 50%;
+        img {
+          // height: 150px;
+        }
+    }
+  }
+}
+
+@media screen and (min-width: $laptop){
+  .category {
+    svg {
+      display: block;
+    }
+    .grid-container {
+      article {
+      // width: 650px;
+        img {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $desktop){
+  .category .grid-container article {
+      img {
+        height: 310px;
+      }
+  }
+}
