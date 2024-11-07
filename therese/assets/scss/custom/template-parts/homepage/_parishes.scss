@@ -1,0 +1,156 @@
+// main: ../../../../../style.scss
+.parish-cluster {
+  position: relative;
+  top: -110px;
+  background: white;
+  padding: 25px 0;
+  text-align: center;
+  margin-bottom: 2rem;
+  .parish-scroll-title {
+    background: white;
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0 10px;
+  }
+  svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    rect, circle, line {
+      filter: brightness(var(--shape-brightness-secondary));
+      fill: var(--clr-secondary);
+      stroke: var(--clr-secondary);
+      stroke-width: .5px;
+    }
+    line {
+      stroke-width: 1.25px;
+    }
+  }
+  svg:first-of-type {
+    display: none;
+    max-height: 100%;
+  }
+  svg:nth-of-type(2) {
+    display: block;
+    top: 50px;
+  }
+  .parishBtns {
+    z-index: 1;
+    position: relative;
+      .parishButtons {
+        height: 310px;
+        text-align: left;
+        padding: 0 0rem;
+        a {
+          text-decoration: none;
+        }
+        .featured-button {
+          box-shadow: 0 3px 6px #00000029;
+          height: 300px;
+          display: block;
+          font-size: var(--fs-500);
+          font-family: var(--font-main);
+          margin-right: 20px;
+          margin-left: 20px;
+          width: 250px;
+          border-radius: 17px;
+          position: relative;
+          background-size: cover;
+          overflow: hidden;
+          text-decoration: none;
+          background-color: #fff;
+          &[href="#"] {
+            pointer-events: none;
+          }
+          img {
+            height: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            border-radius: 17px 17px 0 0;
+            width: 100%;
+          }
+          h2 {
+            text-transform: uppercase;
+          }
+          .button-title, p {
+            margin: 0 10%;
+            position: relative;
+            left: unset;
+            transform: unset;
+          }
+          &::after {
+            content: none;
+          }
+        }
+        .slick-prev, .slick-next {
+          top: 110%;
+        }
+        .slick-prev {
+          right: 0;
+          left: 50%;
+          transform: translateX(-105%);
+        }
+        .slick-next {
+          right: 0;
+          left: 50%;
+          transform: translateX(5%);
+        }
+      }
+  }
+
+  @media screen and (min-width: $tablet){
+    &.parishFlex .parishScroll {
+      width: 60%;
+    }
+    svg:first-of-type {
+      display: block;
+    }
+    svg:nth-of-type(2) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $laptop){
+    &.parishFlex {
+      flex-direction: row;
+    }
+    &.parishFlex h1.parish-scroll-title {
+      width: 50%;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: .67em;
+    }
+    &.parishFlex .parishScroll {
+      margin: 0 0 0 20px;
+      width: 50%;
+    }
+    
+    /* Map Slider */
+    .parish-maps {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowwrap;
+      justify-content: center;
+      .parish-maps-wrapper {
+        width: 50%;
+        margin-top: 0;
+      }
+      .parish-map-slider {
+        width: 50%;
+        margin-left: 3.125rem;
+        margin-bottom: 0;
+        .parish-text-wrapper {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowwrap;
+          justify-content: flex-start;
+        }
+      }
+      .slick-arrow {
+        bottom: 4rem;
+      }
+    }
+  }
+}

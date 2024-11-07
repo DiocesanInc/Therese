@@ -68,10 +68,10 @@ a {
     transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
     display: block;
     opacity: .5;
-    color: #DEDEDE;
     font-size: 45px;
     margin-top: 0;
     margin-bottom: 0;
+    color: var(--clr-tertiary);
     @media screen and (min-width: $laptop){
       font-size: 67px;
     }

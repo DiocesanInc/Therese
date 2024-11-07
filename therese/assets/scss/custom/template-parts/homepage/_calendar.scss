@@ -15,6 +15,9 @@
         // grid-template-columns: var(--grid-layout);
         .slick-arrow {
           top: 120px;
+          &:hover,&:focus,&:active {
+            background: #fff;
+          }
           &.slick-prev {
             left: 50%;
             transform: translateX(-105%);
@@ -45,7 +48,7 @@
             justify-content: center;
             margin: 5px auto;
             .simcal-date-format {
-              color: var(--clr-quaternary) !important;
+              color: var(--clr-quaternary);
               font-size: 14px;
               background-color: transparent !important;
               width: 35px;
@@ -56,17 +59,17 @@
             &:hover {
               border-color: var(--clr-primary);
               .simcal-date-format {
-                color: var(--clr-primary) !important;
+                color: var(--clr-primary);
               }
             }
             &.simcal-today {
-              background-color: var(--clr-tertiary) !important;
+              background-color: var(--clr-tertiary);
               .simcal-date-format {
-                color: var(--clr-quaternary) !important;
+                color: #fff !important;
               }
             }
             &.simcal-current, &.simcal-current:hover {
-              background-color: var(--clr-primary) !important;
+              background-color: var(--clr-primary);
               border: 1px solid var(--clr-primary);
               .simcal-date-format {
                 color: #fff !important;

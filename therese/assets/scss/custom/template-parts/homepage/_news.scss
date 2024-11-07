@@ -150,8 +150,7 @@
           }
 
           .post-read-more {
-              // font-weight: bold;
-              // text-decoration: underline;
+              color: var(--clr-quaternary);
               font-size: clamp(16px, 1.5vw, 23px);
               transition: color 0.3s ease;
               display: inline-block;

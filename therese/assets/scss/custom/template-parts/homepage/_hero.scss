@@ -14,7 +14,7 @@
     height: var(--hero-height);
     position: relative;
     z-index: 10;
-    margin-top: var(--header-height);
+    margin-top: var(--max-logo-height);
 
     &.has-video {
         --hero-height: 50vh;

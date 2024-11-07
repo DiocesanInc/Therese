@@ -285,6 +285,19 @@ $variables->addCssRule(
         "--max-logo-height" => get_field("max_logo_height", "options") . "px"
     )
 );
+$variables->addCssRule(
+    ".featured-buttons",
+    array(
+        "background-color" => get_field("featured_buttons_background_color", "options") ?? "var(--clr-secondary)",
+    )
+);
+$variables->addCssRule(
+    ".featured-buttons .featured-buttons-wrapper .featured-button",
+    array(
+        "color" => get_field("featured_buttons_color", "options") ?? "var(--clr-primary)",
+    )
+);
+
 
 /**
  * FOOTER COLORS
@@ -350,6 +363,55 @@ $variables->addCssRule(
     "footer .site-info .heart",
     array(
         "color" => get_field("site_info_heart_color", "options")
+    )
+);
+
+/**
+ * Calendar
+ */
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-today",
+    array(
+        "background-color" => get_field("calendar_background_color_today", "options") ? get_field("calendar_background_color_today", "options") . "!important" : "var(--clr-primary) !important",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current, .calendar-container .calendar-weekday-slick .simcal-day-label > span.simcal-current:hover",
+    array(
+        "background-color" => get_field("calendar_background_color_selected", "options") ? get_field("calendar_background_color_selected", "options") . "!important" : "var(--clr-secondary) !important",
+        "border-color" => get_field("calendar_background_color_selected", "options") ? get_field("calendar_background_color_selected", "options") . "!important" : "var(--clr-secondary)",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .simcal-day-label > span:hover, .calendar-container .calendar-weekday-slick .simcal-day-label > span:hover .simcal-date-format",
+    array(
+        "color" => get_field("calendar_text_color_hover", "options") ?? "var(--clr-secondary)",
+        "border-color" => get_field("calendar_text_color_hover", "options") ?? "var(--clr-secondary)",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .simcal-day-label > span .simcal-date-format",
+    array(
+        "color" => get_field("calendar_text_color", "options") ?? "var(--clr-primary)",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .slick-arrow",
+    array(
+        "background-color" => get_field("calendar_arrow_color", "options") ?? "var(--clr-secondary)",
+        "border-color" => get_field("calendar_arrow_color", "options") ?? "var(--clr-secondary)",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-weekday-slick .slick-arrow:hover::before, .calendar-container .calendar-weekday-slick .slick-arrow:focus::before, .calendar-container .calendar-weekday-slick .slick-arrow:active::before",
+    array(
+        "color" => get_field("calendar_arrow_color", "options") ?? "var(--clr-secondary)",
+    )
+);
+$variables->addCssRule(
+    ".calendar-container .calendar-event-slick dd.simcal-day .simcal-events .simcal-event .simcal-event-details a h5",
+    array(
+        "color" => get_field("calendar_link_color", "options") ?? "var(--clr-primary)",
     )
 );
 
