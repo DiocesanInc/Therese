@@ -60,6 +60,19 @@ $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'therese' //Plugin slug. Usually it's the same as the name of the directory.
 );
 
+require get_template_directory() . "/update-checker/plugin-update-checker.php";
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/DiocesanInc/Therese',
+    __FILE__,
+    'therese'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
 function showTheAdminBar() {
    if(current_user_can( 'administrator' )){
        add_filter( 'show_admin_bar', '__return_true');
