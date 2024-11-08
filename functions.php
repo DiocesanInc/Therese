@@ -53,12 +53,12 @@ function getDefaultPlaceholderImage()
     return get_template_directory_uri() . "/assets/img/150_X_150.png";
 }
 
-require get_template_directory() . "/update-checker/plugin-update-checker.php";
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://hybrid-updates.diocesanweb.org/hybrids/therese/theme.json', //Metadata URL.
-    __FILE__, //Full path to the main plugin file.
-    'therese' //Plugin slug. Usually it's the same as the name of the directory.
-);
+// require get_template_directory() . "/update-checker/plugin-update-checker.php";
+// $MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+//     'https://hybrid-updates.diocesanweb.org/hybrids/therese/theme.json', //Metadata URL.
+//     __FILE__, //Full path to the main plugin file.
+//     'therese' //Plugin slug. Usually it's the same as the name of the directory.
+// );
 
 require get_template_directory() . "/update-checker/plugin-update-checker.php";
 
