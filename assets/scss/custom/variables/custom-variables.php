@@ -409,7 +409,7 @@ $variables->addCssRule(
     )
 );
 $variables->addCssRule(
-    ".calendar-container .calendar-event-slick dd.simcal-day .simcal-events .simcal-event .simcal-event-details a h5",
+    ".calendar-container .calendar-event-slick dd.simcal-day .simcal-events .simcal-event .simcal-event-details a, .calendar-container .calendar-event-slick dd.simcal-day .simcal-events .simcal-event .simcal-event-details a h5",
     array(
         "color" => get_field("calendar_link_color", "options") ?? "var(--clr-primary)",
     )
