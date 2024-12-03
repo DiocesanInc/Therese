@@ -14,7 +14,7 @@ $id = 'accordion-' . $block['id'];
 
 $headingFontColor = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["heading_font_color"] : "white";
 $headingBackgroundColor = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["heading_background_color"] : "var(--clr-primary)";
-
+$tmpClr = '';
 switch ($headingBackgroundColor) {
     case 'var(--clr-primary)':
         $tmpClr = "primary";
@@ -32,8 +32,8 @@ switch ($headingBackgroundColor) {
 
 $tmpClrVar = "var(--clr-$tmpClr)";
 $tmpClrVar2 = "var(--clr-$tmpClr-2)";
-
-$headingBackgroundColorActive = get_field($tmpClr . "_color", 'options')["is_gradient"] ? "linear-gradient(90deg, $tmpClrVar, $tmpClrVar2)" : $tmpClrVar;
+$isGrad = get_field($tmpClr . "_color", 'options')["is_gradient"] ?? '';
+$headingBackgroundColorActive = $isGrad ? "linear-gradient(90deg, $tmpClrVar, $tmpClrVar2)" : $tmpClrVar;
 
 $contentFontColor = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["content_font_color"] : "black";
 $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("accordion_colors", "options")["content_background_color"] : "white";
@@ -43,7 +43,7 @@ $contentBackgroundColor = get_field("accordion_colors", "options") ? get_field("
     <div class="accordion">
         <?php if (have_rows('accordion')) :
             while (have_rows('accordion')) : the_row(); ?>
-        <div class="accordion-section-title has-primary-background-color has-white-color">
+        <div class="accordion-section-title">
             <h6 class="font-header">
                 <?php the_sub_field('section_title'); ?>
             </h6>

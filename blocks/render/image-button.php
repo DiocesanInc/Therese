@@ -21,10 +21,11 @@ if (get_field('is_manual')) {
     $url    = $link['url'] ?? '';
 } else {
     $page   = get_field('page');
-    $bkgd   = get_the_post_thumbnail_url($page->ID) ? get_the_post_thumbnail_url($page->ID) : (getDefaultFeaturedImage(true) ? getDefaultFeaturedImage(true) : get_stylesheet_directory_uri() . "/assets/img/150_X_150.png");
+    $pageID = $page->ID ?? '';
+    $bkgd   = get_the_post_thumbnail_url($pageID) ? get_the_post_thumbnail_url($pageID) : (getDefaultFeaturedImage(true) ? getDefaultFeaturedImage(true) : get_stylesheet_directory_uri() . "/assets/img/150_X_150.png");
     $target = '';
-    $title  = get_the_title($page->ID);
-    $url    = get_permalink($page->ID);
+    $title  = get_the_title($pageID);
+    $url    = get_permalink($pageID);
 }
 ?>
 <div id="<?php echo $id; ?>" class="imageButtons">

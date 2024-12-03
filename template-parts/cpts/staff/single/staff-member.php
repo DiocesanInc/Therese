@@ -24,9 +24,9 @@ $shape = get_field('shape_selector','options');
             <div class="staff-member-title-wrapper">
                 <?php the_title("<h3 class='staff-member-title'>", "</h3>"); ?>
 
-                <div class="staff-member-position">
+                <h5 class="staff-member-position">
                     <?php the_field("position"); ?>
-                </div>
+                </h5>
             </div>
 
             <div class="staff-member-contact-wrapper">
@@ -42,7 +42,7 @@ $shape = get_field('shape_selector','options');
                 <?php endif; ?>
 
             </div>
-            <?php the_content();?>
+            <?php //the_content();?>
             <div class="staff-member-bio-wrapper">
               <a data-excerpt="<?php echo htmlspecialchars(get_the_content()); ?>"
                 data-title="<?php echo htmlspecialchars(get_the_title()) ?>"

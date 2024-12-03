@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: St. Therese Hybrid Theme by Diocesan
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -4511,13 +4511,13 @@ input[type=text], input[type=email], input[type=url], input[type=password], inpu
   flex-direction: column;
 }
 .staff-member .staff-member-info .staff-member-title {
-  margin-block: 0 10px;
+  margin-block: 0px;
   font-family: var(--font-heading);
   font-weight: bold;
 }
 .staff-member .staff-member-info .staff-member-position {
-  text-transform: uppercase;
-  font-size: 16px;
+  margin: 0;
+  font-size: 18px;
 }
 .staff-member .staff-member-info a {
   text-decoration: underline;
