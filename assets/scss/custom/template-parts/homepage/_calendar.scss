@@ -21,10 +21,18 @@
           &.slick-prev {
             left: 50%;
             transform: translateX(-105%);
+            &::before {
+              position: absolute;
+              transform: translate(-60%, -50%);
+            }
           }
           &.slick-next {
             right: 50%;
             transform: translateX(105%);
+            &::before {
+              position: absolute;
+              transform: translate(-40%, -50%);
+            }
           }
         }
         .slick-list {

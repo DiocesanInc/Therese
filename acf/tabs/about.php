@@ -38,6 +38,25 @@ function acf_about()
             'append' => '',
             'maxlength' => 30,
         ),
+        array(
+            'key' => 'field_6182f5e7311cy',
+            'label' => 'About Header (faded text)',
+            'name' => 'about_header_faded',
+            'type' => 'text',
+            'instructions' => '*Max 30 Characters. This will display above the header as scrolling text.',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '50',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => 30,
+        ),
         // array(
         //     'key' => 'field_623a1c6e4f92z',
         //     'label' => 'Content Position',
@@ -124,7 +143,7 @@ function acf_about()
         ),
         array(
             'key' => 'field_623a114b9188x',
-            'label' => 'Top Right Image',
+            'label' => 'Bottom Right Image',
             'name' => 'about_background_image2',
             'type' => 'image',
             'instructions' => '*Recommended size 400x300',
@@ -148,7 +167,7 @@ function acf_about()
         ),
         array(
             'key' => 'field_623a114b91881',
-            'label' => 'Bottom Right Image',
+            'label' => 'Top Right Image',
             'name' => 'about_background_image3',
             'type' => 'image',
             'instructions' => '*Recommended size 400x300',

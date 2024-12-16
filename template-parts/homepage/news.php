@@ -12,6 +12,7 @@ $news = get_field("news_category");
 
 $position = get_field("news_content_position");
 $header = get_field("news_header");
+$headerFaded = get_field("news_header_faded");
 $content = get_field("news_content");
 $button = get_field("news_button");
 $newShape = $args['shape'];
@@ -19,11 +20,11 @@ $newShape = $args['shape'];
 
 <?php if ($news) : ?>
 <div class="news-container<?php if($newShape == 'lines'): echo ' lines'; else: endif;?>">
-    <?php if ($header) : ?>
+    <?php if ($headerFaded) : ?>
       <div class="container left-to-right">
         <div class="scrolling-text">
           <h1 class="news-faded-header faded-header">
-              <?php echo $header; ?>
+              <?php echo $headerFaded; ?>
           </h1>
         </div>
       </div>
@@ -32,7 +33,8 @@ $newShape = $args['shape'];
       <div class="news-container-wrapper equal-height">
         <?php
             $posts = get_posts(array(
-                "category" => $news
+                "category" => $news,
+                "posts_per_page" => 5
             ));
 
             foreach ($posts as $post) :

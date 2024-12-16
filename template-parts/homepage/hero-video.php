@@ -8,6 +8,7 @@
  * @package celine
  */
 
+ $newShape = $args['shape'];
 ?>
 <?php if (get_field("hero_video")) : ?>
 <div class="hero has-video">
@@ -32,5 +33,7 @@
     </div>
     <?php endwhile; ?>
 
+    <?php get_template_part("template-parts/homepage/svgs-rectangle/$newShape");?>
+<?php get_template_part("template-parts/homepage/svgs-rectangle/mini-$newShape");?>
 </div>
 <?php endif;

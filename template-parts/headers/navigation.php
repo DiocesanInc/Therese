@@ -17,7 +17,7 @@
     }
   ?>">
   <?php $name = 'sticky-menu'; $menu = wp_get_nav_menu_object( $name );
-  if(get_field('buttons_or_menu')==0):?>
+  if((get_page_template() === get_template_directory() . '/templates/page-homepage.php') && get_field('buttons_or_menu')==0):?>
     <div class="<?php echo $menu ? 'homeStickyButtons' : ''?>">
       <?php
       wp_nav_menu(

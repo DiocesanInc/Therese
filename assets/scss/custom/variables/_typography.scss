@@ -4,7 +4,8 @@ html,
 p,
 div,
 ul,
-li {
+li,
+button {
     font-size: var(--fs-400, 16px);
     font-family: var(--font-main);
 }
@@ -71,7 +72,7 @@ a {
     font-size: 45px;
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--clr-tertiary);
+    // color: var(--clr-tertiary);
     @media screen and (min-width: $laptop){
       font-size: 67px;
     }

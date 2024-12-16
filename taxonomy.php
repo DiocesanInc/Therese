@@ -17,7 +17,7 @@ $backLink = get_field("ministries", "options")["ministry_groups_back_button"] ??
 
 <div class="content-area" id="primary">
     <main class="site-main" id="main">
-        <?php get_template_part('template-parts/headers/page-header'); ?>
+        <?php get_template_part('template-parts/headers/page-header', null, array("headerImg" => getDefaultFeaturedImage(true))); ?>
 
 
         <?php if (have_posts()) : ?>

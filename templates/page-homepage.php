@@ -39,7 +39,7 @@ get_header();
         <?php get_template_part("template-parts/homepage/about", null, array('shape' => get_field('shape_selector','options'))); ?>
         <?php get_template_part("template-parts/homepage/mission", null, array('shape' => get_field('shape_selector','options'))); ?>
         <?php get_template_part("template-parts/homepage/news", null, array('shape' => get_field('shape_selector','options'))); ?>
-        <?php //get_template_part("template-parts/homepage/calendar", null, array('shape' => get_field('shape_selector','options'))); ?>
+        <?php get_template_part("template-parts/homepage/calendar", null, array('shape' => get_field('shape_selector','options'))); ?>
 
         <?php endif; ?>
     </main>

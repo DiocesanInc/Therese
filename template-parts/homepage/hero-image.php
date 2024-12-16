@@ -10,6 +10,7 @@
 
 $slideClasses = get_field("parallax_scrolling") ? "hero-slide parallax" : "hero-slide";
 
+$newShape = $args['shape'];
 ?>
 <?php if (have_rows("slider")) : ?>
 <div class="hero">
@@ -34,5 +35,7 @@ $slideClasses = get_field("parallax_scrolling") ? "hero-slide parallax" : "hero-
         </div>
         <?php endwhile; ?>
     </div>
+<?php get_template_part("template-parts/homepage/svgs-rectangle/$newShape");?>
+<?php get_template_part("template-parts/homepage/svgs-rectangle/mini-$newShape");?>
 </div>
 <?php endif;

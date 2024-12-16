@@ -13,6 +13,7 @@ $backgroundImage2 = get_field("about_background_image2")["url"];
 $backgroundImage3 = get_field("about_background_image3")["url"];
 $position = get_field("about_content_position");
 $header = get_field("about_header");
+$headerFaded = get_field("about_header_faded");
 $content = get_field("about_content");
 $button = get_field("about_button");
 $newShape = $args['shape'];
@@ -28,17 +29,20 @@ $newShape = $args['shape'];
       <?php get_template_part("template-parts/homepage/svgs-rectangle/mini-$newShape");?>
     </div>
     <div class="about-content-wrapper <?php echo $position; ?>">
-      <?php if ($header) : ?>
+      <?php if ($headerFaded) : ?>
         <div class="container left-to-right">
           <div class="scrolling-text">
             <h1 class="about-faded-header faded-header">
-                <?php echo $header; ?>
+                <?php echo $headerFaded; ?>
             </h1>
           </div>
         </div>
-      <h1 class="about-header">
-          <?php echo $header; ?>
-      </h1>
+      <?php endif; ?>
+        
+      <?php if ($header) : ?>
+        <h1 class="about-header">
+            <?php echo $header; ?>
+        </h1>
       <?php endif; ?>
       <?php if ($content) : ?>
       <div class="about-content">

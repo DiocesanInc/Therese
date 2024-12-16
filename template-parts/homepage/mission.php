@@ -11,6 +11,7 @@
 $backgroundImage = get_field("mission_background_image")["url"];
 $position = get_field("mission_content_position");
 $header = get_field("mission_header");
+$headerFaded = get_field("mission_header_faded");
 $content = get_field("mission_content");
 $button = get_field("mission_button");
 $newShape = $args['shape'];
@@ -19,27 +20,31 @@ $newShape = $args['shape'];
 
 <div class="mission-container<?php if($newShape != 'none'): echo " has-shape"; else: ""; endif;?>">
     <div class="mission-content-wrapper <?php echo $position; ?>">
-      <?php if ($header) : ?>
+      <?php if ($headerFaded) : ?>
         <div class="container">
           <div class="scrolling-text">
             <h1 class="mission-faded-header faded-header">
-                <?php echo $header; ?>
+                <?php echo $headerFaded; ?>
             </h1>
           </div>
         </div>
-      <h1 class="mission-header">
-          <?php echo $header; ?>
-      </h1>
       <?php endif; ?>
-      <?php if ($content) : ?>
-      <div class="mission-content">
-          <?php echo $content; ?>
-      </div>
+      <div class="mission-content-wrap">
+      <?php if ($header) : ?>
+        <h1 class="mission-header">
+            <?php echo $header; ?>
+        </h1>
       <?php endif; ?>
-      <?php if ($button) : ?>
-        <a href="<?php echo $button['url']; ?>" class="the-button" target="<?php echo $button['target']; ?>" title="<?php echo $button['title']; ?>">
-          <?php echo $button['title']; ?>
+        <?php if ($content) : ?>
+        <div class="mission-content">
+            <?php echo $content; ?>
+        </div>
+        <?php endif; ?>
+        <?php if ($button) : ?>
+          <a href="<?php echo $button['url']; ?>" class="the-button" target="<?php echo $button['target']; ?>" title="<?php echo $button['title']; ?>">
+            <?php echo $button['title']; ?>
         </a>
+      </div>
       <?php endif; ?>
     </div>
     <div class="mission-image">

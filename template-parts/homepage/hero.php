@@ -9,4 +9,4 @@
  */
 
 $hero = get_field("is_video") ? "video" : "image";
-get_template_part("template-parts/homepage/hero", $hero);
+get_template_part("template-parts/homepage/hero", $hero, array('shape' => get_field('shape_selector','options')));

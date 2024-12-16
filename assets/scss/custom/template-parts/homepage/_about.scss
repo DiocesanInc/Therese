@@ -5,8 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
-    // max-width: 95%;
-    overflow: hidden;
+    overflow-x: clip;
     z-index: 10;
     flex-direction: column;
 }
@@ -86,7 +85,7 @@
     height: 100%;
     object-fit: cover;
     margin-left: -5%;
-    margin-top: 5%;
+    margin-top: 2%;
     z-index: -1;
   }
   .img3 {

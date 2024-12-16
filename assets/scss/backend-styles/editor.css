@@ -7,3 +7,6 @@
     margin-block: 1, 5rem;
     clear: both;
 }
+a.pageContentlink {
+    pointer-events: none;
+}

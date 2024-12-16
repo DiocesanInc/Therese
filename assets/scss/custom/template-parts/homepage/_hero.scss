@@ -9,12 +9,43 @@
 
     --hero-title-max-width: none;
 
-    --hero-height: 80vh;
+    --hero-height: 85vh;
 
     height: var(--hero-height);
     position: relative;
     z-index: 10;
     margin-top: var(--max-logo-height);
+
+    svg {
+      position: absolute;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: -1;
+      rect, circle, line {
+        filter: brightness(var(--shape-brightness-secondary));
+        fill: var(--clr-secondary);
+        stroke: var(--clr-secondary);
+        stroke-width: .5px;
+      }
+      line {
+        stroke-width: 1.25px;
+      }
+    }
+    svg:first-of-type {
+      display: none;
+    }
+    svg:nth-of-type(2) {
+      display: block;
+      top: 50px;
+    }
+    @media screen and (min-width: $tablet) {
+      svg:first-of-type {
+        display: block;
+      }
+      svg:nth-of-type(2) {
+        display: none;
+      }
+    }
 
     &.has-video {
         --hero-height: 50vh;

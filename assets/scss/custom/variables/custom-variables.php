@@ -298,6 +298,15 @@ $variables->addCssRule(
     )
 );
 
+/**
+ * Faded Headers
+ */
+$variables->addCssRule(
+    ".faded-header",
+    array(
+        "color" => get_field("faded_header_color", "options") ?? "var(--clr-tertiary)",
+    )
+);
 
 /**
  * FOOTER COLORS

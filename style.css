@@ -965,7 +965,8 @@ html,
 p,
 div,
 ul,
-li {
+li,
+button {
   font-size: var(--fs-400, 16px);
   font-family: var(--font-main);
 }
@@ -1045,7 +1046,6 @@ a {
   font-size: 45px;
   margin-top: 0;
   margin-bottom: 0;
-  color: var(--clr-tertiary);
 }
 @media screen and (min-width: 1025px) {
   .faded-header {
@@ -2056,6 +2056,10 @@ form .gform_body textarea:focus-visible {
     height: 310px;
   }
 }
+.page-template-templatespage-contact-php iframe {
+  width: 100%;
+}
+
 footer {
   --footer-padding-block: 25px 25px;
   --margin-top-address: 25px;
@@ -2397,6 +2401,7 @@ main .entry-header.page-header .entry-title {
   left: 50%;
   transform: translateX(-50%);
   color: white;
+  text-align: center;
 }
 
 .search-form-overlay {
@@ -2509,12 +2514,6 @@ main .entry-header.page-header .entry-title {
     padding-top: 2rem;
   }
 }
-@media screen and (min-width: 1025px) {
-  .admin-bar .site-header {
-    padding-top: 1.5rem;
-  }
-}
-
 .hero {
   --hero-info-position-bottom: 10%;
   --hero-info-position-left: 5%;
@@ -2523,11 +2522,41 @@ main .entry-header.page-header .entry-title {
   --hero-info-padding: 2rem 0 1rem;
   --hero-info-font-color: white;
   --hero-title-max-width: none;
-  --hero-height: 80vh;
+  --hero-height: 85vh;
   height: var(--hero-height);
   position: relative;
   z-index: 10;
   margin-top: var(--max-logo-height);
+}
+.hero svg {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+.hero svg rect, .hero svg circle, .hero svg line {
+  filter: brightness(var(--shape-brightness-secondary));
+  fill: var(--clr-secondary);
+  stroke: var(--clr-secondary);
+  stroke-width: 0.5px;
+}
+.hero svg line {
+  stroke-width: 1.25px;
+}
+.hero svg:first-of-type {
+  display: none;
+}
+.hero svg:nth-of-type(2) {
+  display: block;
+  top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .hero svg:first-of-type {
+    display: block;
+  }
+  .hero svg:nth-of-type(2) {
+    display: none;
+  }
 }
 .hero.has-video {
   --hero-height: 50vh;
@@ -2656,7 +2685,7 @@ main .entry-header.page-header .entry-title {
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
   z-index: 10;
   flex-direction: column;
 }
@@ -2737,7 +2766,7 @@ main .entry-header.page-header .entry-title {
   -o-object-fit: cover;
      object-fit: cover;
   margin-left: -5%;
-  margin-top: 5%;
+  margin-top: 2%;
   z-index: -1;
 }
 .about-image .img3 {
@@ -2866,7 +2895,14 @@ main .entry-header.page-header .entry-title {
   --pos-left: 50%;
   --pos-translate: -50%;
 }
+.mission-content-wrapper .mission-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
 .mission-content-wrapper .mission-header {
+  line-height: 1;
   position: relative;
   font-size: clamp(25px, 2.5vw, 40px);
   margin-bottom: 20px;
@@ -2883,6 +2919,8 @@ main .entry-header.page-header .entry-title {
 }
 .mission-content-wrapper .the-button {
   margin: 15px 0 10px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .mission-content-wrapper .container {
   position: relative;
@@ -2983,6 +3021,12 @@ main .entry-header.page-header .entry-title {
   }
   .mission-content-wrapper .mission-header, .mission-content-wrapper .mission-content, .mission-content-wrapper .the-button {
     margin-left: 4vw;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .mission-content-wrapper .mission-content {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   .mission-image {
     margin-right: 6vw;
@@ -3227,9 +3271,17 @@ main .entry-header.page-header .entry-title {
   left: 50%;
   transform: translateX(-105%);
 }
+.calendar-container .calendar-weekday-slick .slick-arrow.slick-prev::before {
+  position: absolute;
+  transform: translate(-60%, -50%);
+}
 .calendar-container .calendar-weekday-slick .slick-arrow.slick-next {
   right: 50%;
   transform: translateX(105%);
+}
+.calendar-container .calendar-weekday-slick .slick-arrow.slick-next::before {
+  position: absolute;
+  transform: translate(-40%, -50%);
 }
 .calendar-container .calendar-weekday-slick .slick-list {
   background: #fff;
@@ -3435,7 +3487,7 @@ main .entry-header.page-header .entry-title {
   backface-visibility: hidden;
 }
 .news-container .container .scrolling-text .news-faded-header {
-  color: var(--clr-quaternary);
+  opacity: 0.6;
 }
 .news-container .news-container-wrapper-wrapper {
   display: flex;
@@ -4449,6 +4501,9 @@ input[type=text], input[type=email], input[type=url], input[type=password], inpu
 }
 .ministry-slider .ministry-group .slick-list {
   overflow: visible;
+}
+.ministry-slider .ministry-group .slick-list .slick-track {
+  margin-left: 0;
 }
 .ministry-slider .ministry-group .slick-list .slick-track .ministry-wrapper {
   margin: 0 0.5rem 3rem;
