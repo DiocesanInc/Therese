@@ -53,7 +53,7 @@ $newShape = get_field('shape_selector','options');
 
                     endif;
 
-                    $query = new WP_Query(array('post__not_in' => get_option('sticky_posts'), "order_by" => "menu_order", "order" => "ASC"));
+                    $query = new WP_Query(array('post__not_in' => get_option('sticky_posts'), "order_by" => "menu_order", "order" => "DESC"));
 
                     /* Start the Loop */
                     while ($query->have_posts()) : $query->the_post();
