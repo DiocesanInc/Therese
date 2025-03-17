@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: St. Therese Hybrid Theme by Diocesan
-Version: 1.1.1
+Version: 1.1.2
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1410,6 +1410,13 @@ form.search-form .search-submit:hover {
   transform: scale(1);
 }
 
+.wp-block-button__link.has-primary-background-color,
+.wp-block-button__link.has-secondary-background-color,
+.wp-block-button__link.has-tertiary-background-color,
+.wp-block-button__link.has-quaternary-background-color {
+  background: transparent;
+}
+
 .wp-block-button__link.has-primary-background-color::after {
   background: var(--clr-primary);
 }
@@ -2583,16 +2590,16 @@ main .entry-header.page-header .entry-title {
   color: #fff;
 }
 .hero .hero-info .hero-buttons .the-button.has-primary-background-color {
-  background: var(--clr-primary);
+  background: var(--clr-primary) !important;
 }
 .hero .hero-info .hero-buttons .the-button.has-secondary-background-color {
-  background: var(--clr-secondary);
+  background: var(--clr-secondary) !important;
 }
 .hero .hero-info .hero-buttons .the-button.has-tertiary-background-color {
-  background: var(--clr-tertiary);
+  background: var(--clr-tertiary) !important;
 }
 .hero .hero-info .hero-buttons .the-button.has-quaternary-background-color {
-  background: var(--clr-quaternary);
+  background: var(--clr-quaternary) !important;
 }
 .hero .hero-info .hero-buttons .the-button:hover {
   background: #fff !important;

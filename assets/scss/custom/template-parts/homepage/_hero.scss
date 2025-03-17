@@ -92,16 +92,16 @@
           .the-button {
             color: #fff;
             &.has-primary-background-color {
-              background: var(--clr-primary);
+              background: var(--clr-primary) !important;
             }
             &.has-secondary-background-color {
-              background: var(--clr-secondary);
+              background: var(--clr-secondary) !important;
             }
             &.has-tertiary-background-color {
-              background: var(--clr-tertiary);
+              background: var(--clr-tertiary) !important;
             }
             &.has-quaternary-background-color {
-              background: var(--clr-quaternary);
+              background: var(--clr-quaternary) !important;
             }
             &:hover {
               background: #fff !important;
