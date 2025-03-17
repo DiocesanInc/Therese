@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Diocesan
 Author URI: http://underscores.me/
 Description: St. Therese Hybrid Theme by Diocesan
-Version: 1.1
+Version: 1.1.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -1291,7 +1291,7 @@ a {
   opacity: 0.75;
 }
 
-.the-button, .dpi_pw-container #dpi_pw-request-form .the-button, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column {
+.the-button, .wp-block-button__link, .wp-block-file__button, .dpi_pw-container #dpi_pw-request-form .the-button, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column {
   color: var(--button-font-color, white);
   padding: 0.6rem 1.2rem 0.6rem 1.2rem;
   text-decoration: none;
@@ -1307,11 +1307,11 @@ a {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
-  background: transparent;
+  background: transparent !important;
   border: 0px;
   line-height: 1.5;
 }
-.the-button:hover, .the-button:focus, .dpi_pw-container #dpi_pw-request-form .the-button:hover, .dpi_pw-container #dpi_pw-request-form .the-button:focus, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:hover, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:focus {
+.the-button:hover, .the-button:focus, .wp-block-button__link:hover, .wp-block-button__link:focus, .wp-block-file__button:hover, .wp-block-file__button:focus, .dpi_pw-container #dpi_pw-request-form .the-button:hover, .dpi_pw-container #dpi_pw-request-form .the-button:focus, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:hover, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:focus {
   text-decoration: none;
   background: transparent;
   color: var(--button-font-color-hover, var(--clr-quaternary));
@@ -1319,7 +1319,7 @@ a {
   transform: unset;
   font-weight: bold;
 }
-.the-button::after, .dpi_pw-container #dpi_pw-request-form .the-button::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column::after {
+.the-button::after, .wp-block-button__link::after, .wp-block-file__button::after, .dpi_pw-container #dpi_pw-request-form .the-button::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column::after {
   content: "";
   background: var(--button-background-color);
   border-radius: 25px;
@@ -1333,7 +1333,7 @@ a {
   transition: width 0.35s ease-in;
   z-index: -1;
 }
-.the-button:hover::after, .the-button.clicked::after, .the-button:focus::after, .dpi_pw-container #dpi_pw-request-form .the-button:hover::after, .dpi_pw-container #dpi_pw-request-form .the-button.clicked::after, .dpi_pw-container #dpi_pw-request-form .the-button:focus::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:hover::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column.clicked::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:focus::after {
+.the-button:hover::after, .the-button.clicked::after, .the-button:focus::after, .wp-block-button__link:hover::after, .wp-block-button__link.clicked::after, .wp-block-button__link:focus::after, .wp-block-file__button:hover::after, .wp-block-file__button.clicked::after, .wp-block-file__button:focus::after, .dpi_pw-container #dpi_pw-request-form .the-button:hover::after, .dpi_pw-container #dpi_pw-request-form .the-button.clicked::after, .dpi_pw-container #dpi_pw-request-form .the-button:focus::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:hover::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column.clicked::after, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column:focus::after {
   width: 100%;
   opacity: 0.9;
   max-width: 100%;
@@ -1341,6 +1341,10 @@ a {
 
 .dpi_pw-container #dpi_pw-request-form .the-button {
   padding: 0;
+}
+
+.wp-block-file__button {
+  font-size: inherit;
 }
 
 @keyframes button-click {
@@ -1406,45 +1410,20 @@ form.search-form .search-submit:hover {
   transform: scale(1);
 }
 
-.wp-block-button__link {
-  border: 1px solid;
+.wp-block-button__link.has-primary-background-color::after {
+  background: var(--clr-primary);
 }
 
-.wp-block-button__link:hover {
-  background: white;
-  color: var(--clr-primary);
+.wp-block-button__link.has-secondary-background-color::after {
+  background: var(--clr-secondary);
 }
 
-.wp-block-button__link.has-primary-background-color:hover {
-  color: var(--clr-primary) !important;
+.wp-block-button__link.has-tertiary-background-color::after {
+  background: var(--clr-tertiary);
 }
 
-.wp-block-button__link.has-secondary-background-color:hover {
-  color: var(--clr-secondary) !important;
-}
-
-.wp-block-button__link.has-tertiary-background-color:hover {
-  color: var(--clr-tertiary) !important;
-}
-
-.wp-block-button__link.has-quaternary-background-color:hover {
-  color: var(--clr-quaternary) !important;
-}
-
-.wp-block-button__link.has-primary-background-color {
-  border-color: var(--clr-primary);
-}
-
-.wp-block-button__link.has-secondary-background-color {
-  border-color: var(--clr-secondary);
-}
-
-.wp-block-button__link.has-tertiary-background-color {
-  border-color: var(--clr-tertiary);
-}
-
-.wp-block-button__link.has-quaternary-background-color {
-  border-color: var(--clr-quaternary);
+.wp-block-button__link.has-quaternary-background-color::after {
+  background: var(--clr-quaternary);
 }
 
 .wp-block-separator {

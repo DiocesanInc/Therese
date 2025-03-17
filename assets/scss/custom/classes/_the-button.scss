@@ -1,5 +1,5 @@
 //main:../../../../style.scss
-.the-button, .dpi_pw-container #dpi_pw-request-form .the-button, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column {
+.the-button, .wp-block-button__link, .wp-block-file__button, .dpi_pw-container #dpi_pw-request-form .the-button, #dpi_pw-request-form .dpi_pw-form-row:last-of-type .dpi_pw-form-column {
     color: var(--button-font-color, white);
     padding: 0.6rem 1.2rem 0.6rem 1.2rem;
     text-decoration: none;
@@ -15,7 +15,7 @@
     position: relative;
     border-radius: 15px;
     overflow: hidden;
-    background: transparent;
+    background: transparent !important;
     border: 0px;
     line-height: 1.5;
     &:hover,
@@ -50,6 +50,10 @@
 
 .dpi_pw-container #dpi_pw-request-form .the-button {
     padding: 0;
+}
+
+.wp-block-file__button {
+    font-size: inherit;
 }
 
 @keyframes button-click {
